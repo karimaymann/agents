@@ -1,0 +1,285 @@
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+%	The MIT License (MIT)
+%
+%	Copyright (c) 2021 Jitin Nair
+%
+%	Permission is hereby granted, free of charge, to any person obtaining a copy
+%	of this software and associated documentation files (the "Software"), to deal
+%	in the Software without restriction, including without limitation the rights
+%	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+%	copies of the Software, and to permit persons to whom the Software is
+%	furnished to do so, subject to the following conditions:
+%	
+%	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+%	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+%	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+%	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+%	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+%	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+%	THE SOFTWARE.
+%	
+%
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT DEFINITION
+%----------------------------------------------------------------------------------------
+
+% article class because we want to fully customize the page and not use a cv template
+\documentclass[a4paper,12pt]{article}
+
+%----------------------------------------------------------------------------------------
+%	FONT
+%----------------------------------------------------------------------------------------
+
+% % fontspec allows you to use TTF/OTF fonts directly
+% \usepackage{fontspec}
+% \defaultfontfeatures{Ligatures=TeX}
+
+% % modified for ShareLaTeX use
+% \setmainfont[
+% SmallCapsFont = Fontin-SmallCaps.otf,
+% BoldFont = Fontin-Bold.otf,
+% ItalicFont = Fontin-Italic.otf
+% ]
+% {Fontin.otf}
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES
+%----------------------------------------------------------------------------------------
+\usepackage{url}
+\usepackage{parskip} 	
+
+%other packages for formatting
+\RequirePackage{color}
+\RequirePackage{graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[scale=0.9]{geometry}
+
+%tabularx environment
+\usepackage{tabularx}
+
+%for lists within experience section
+\usepackage{enumitem}
+
+% centered version of 'X' col. type
+\newcolumntype{C}{>{\centering\arraybackslash}X} 
+
+%to prevent spillover of tabular into next pages
+\usepackage{supertabular}
+\usepackage{tabularx}
+\newlength{\fullcollw}
+\setlength{\fullcollw}{0.47\textwidth}
+
+%custom \section
+\usepackage{titlesec}				
+\usepackage{multicol}
+\usepackage{multirow}
+
+%CV Sections inspired by: 
+%http://stefano.italians.nl/archives/26
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{10pt}{10pt}
+
+%for publications
+\usepackage[style=authoryear,sorting=ynt, maxbibnames=2]{biblatex}
+
+%Setup hyperref package, and colours for links
+\usepackage[unicode, draft=false]{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
+\addbibresource{citations.bib}
+\setlength\bibitemsep{1em}
+
+%for social icons
+\usepackage{fontawesome5}
+
+%debug page outer frames
+%\usepackage{showframe}
+
+%----------------------------------------------------------------------------------------
+%	BEGIN DOCUMENT
+%----------------------------------------------------------------------------------------
+\begin{document}
+
+% non-numbered pages
+\pagestyle{empty} 
+
+%----------------------------------------------------------------------------------------
+%	TITLE
+%----------------------------------------------------------------------------------------
+
+% \begin{tabularx}{\linewidth}{ @{}X X@{} }
+% \huge{Your Name}\vspace{2pt} & \hfill \emoji{incoming-envelope} email@email.com \\
+% \raisebox{-0.05\height}\faGithub\ username \ | \
+% \raisebox{-0.00\height}\faLinkedin\ username \ | \ \raisebox{-0.05\height}\faGlobe \ mysite.com  & \hfill \emoji{calling} number
+% \end{tabularx}
+
+\begin{tabularx}{\linewidth}{@{} C @{}}
+\Huge{Karim Ayman Elsaeed} \\[7pt]
+\href{mailto:karim.aymann14@gmail.com}{\raisebox{-0.05\height}\faEnvelope \ karim.aymann14@gmail.com} \ $|$ \ 
+\href{https://www.linkedin.com/in/karim-ayman-99605b2b8//}{\raisebox{-0.05\height}\faLinkedin\ Karim Ayman } \ $|$ \ 
+\href{tel:+20 1018626022}{\raisebox{-0.05\height}\faMobile \ +201018626022} \\
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+% EXPERIENCE SECTIONS
+%----------------------------------------------------------------------------------------
+
+%Interests/ Keywords/ Summary
+% \section{About Me}
+% A computer engineering scientist adopting a growth mindset, who is enthusiastic about programming, problem solving, and creative projects.
+
+
+%	EDUCATION
+%----------------------------------------------------------------------------------------
+\section{Education}
+\begin{tabularx}{\linewidth}{@{}l X@{}}	
+2019 - 2024 & Bachelor of Engineering | Software Engineering at \textbf{The German University in Cairo.} \\ 
+& \textbf{Thesis:} Performance Evaluation of Real-time and Non-real-time Applications. \\
+
+\end{tabularx}
+
+
+%----------------------------------------------------------------------------------------
+
+%Experience
+\section{Work Experience}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+
+\textbf{Software Engineer} | Verto Wave & \hfill July 2024 - Present \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+
+\begin{minipage}[t]{\linewidth}
+
+    \begin{itemize}[nosep,after=\strut, leftmargin=2em, itemsep=5pt]
+    
+        \item[]Full-Stack Software Engineer, leveraging AI frameworks in building LLM-based applications. Developed a variety of desktop and web applications, leveraging both front-end and back-end technologies. My expertise spans the full development life cycle, with a strong focus on creating scalable and secure solutions, and integrating LLMs in our applications. Key areas of my work include:
+        \begin{multicols}{3}
+        \begin{itemize}[nosep,after=\strut, leftmargin=2em, itemsep=5pt]
+            \item[•]LangChain
+            \item[•].NET Framework
+            \item[•]Elasticsearch/Kibana
+            \item[•]Docker
+            \item[•]Golang
+            \item[•]LangGraph 
+            \item[•]MS SQL Server
+            \item[•]Git
+            \item[•]Python
+            \item[•]NoSQL Databases
+            \item[•]Ollama 
+            \item[•]Machine Learning 
+            \item[•]RAG 
+            \item[•]FastAPI 
+            \item[•]ReactJS 
+        \end{itemize}
+        \end{multicols}
+        \item[•]Built LLM-driven applications, enabling intelligent automation, and natural language interaction.
+        \item[•]Gained proficiency in .NET Framework for building robust and high-performance APIs and services.
+    \end{itemize}
+    \end{minipage}
+}
+\end{tabularx}
+
+
+%----------------------------------------------------------------------------------------
+%	PUBLICATIONS
+%----------------------------------------------------------------------------------------
+% \section{Publications}
+% \begin{refsection}[citations.bib]
+% \nocite{*}
+% \printbibliography[heading=none]
+% \end{refsection}
+
+\section{Certificates and Extra Curricular Courses}
+\begin{multicols}{2}
+    \begin{itemize}[nosep,after=\strut, leftmargin=2em, itemsep=5pt]
+        \item[•]  \textbf{IBM} Data Science Professional Certificate 
+        \item[•] The Complete Agentic AI Engineering Course, \textbf{Udemy}, 
+        \item[•]Fundamentals of AI Agents Using RAG and LangChain, \textbf{IBM}
+        \item[•] Supervised Machine Learning: Regression and Classification, \textbf{Stanford Online}     
+        \item[•]Python for Data Science, AI \& Development
+        \item[•]AWS Cloud Practitioner
+
+
+    \end{itemize}
+
+\end{multicols}
+
+%----------------------------------------------------------------------------------------
+%	SKILLS
+%----------------------------------------------------------------------------------------
+\section{Skills}
+\begin{multicols}{2}
+    \subsection*{Tools and Technologies}
+    \begin{itemize}[nosep, leftmargin=1.5em]
+        \item Git and GitHub
+        \item RESTful APIs
+        \item Docker
+        \item SQL/NoSQL Databases
+        \item Vector Databases
+        \item Elasticsearch/Kibana
+
+    \end{itemize}
+
+    \subsection*{Libraries and Frameworks}
+    \begin{itemize}[nosep, leftmargin=1.5em]
+        \item LangChain
+        \item LangGraph
+        \item Retrieval-Augmented Generation (RAG)
+        \item Scikit-learn
+        \item Matplotlib / Seaborn
+        \item Tableau
+        \item Hugging Face
+
+    \end{itemize}
+
+    
+\end{multicols}
+\newpage
+\begin{multicols}{2}
+
+    \subsection*{Programming Languages}
+    \begin{itemize}[nosep, leftmargin=1.5em]
+        \item Python
+        \item Java
+        \item C\#
+        \item GoLang
+        \item JavaScript
+    \end{itemize}
+
+    \subsection*{Other Skills}
+    \begin{itemize}[nosep, leftmargin=1.5em]
+        \item Data Structures and Algorithms 
+        \item Data Analysis
+        \item Data Visualization
+        \item Machine Learning
+        \item GenAI
+    \end{itemize}
+    
+\end{multicols}
+
+\section{Key Personal Projects}
+
+\begin{itemize}[leftmargin=1.5em, itemsep=8pt]
+
+    \item \textbf{My Personal Career Chatbot} (Python, OpenAI SDK, Pushover) \\
+    Developed an AI-powered assistant that answers career-related questions about myself by analyzing my LinkedIn profile and a supplementary PDF containing professional background information. The system uses natural language processing to extract key achievements, skills, and experiences, enabling contextual and personalized responses about my career journey.
+    
+    \item \textbf{Search Microservice for Indiegogo Clone} (Java Spring Boot, Elasticsearch, Docker) \\
+    Built a microservice to handle search and filtering functionality for an Indiegogo-style platform. Implemented full-text search and filtering using Elasticsearch and containerized the service using Docker.
+
+    \item \textbf{Live Stock Data Analysis Tool} (Python, Pandas, BeautifulSoup, Matplotlib) \\
+    Built a data pipeline that scraped live stock prices using BeautifulSoup, cleaned and analyzed data with Pandas, and visualized trends using Matplotlib. Used for real-time insights and alert generation.
+    
+    \item \textbf{Scalable Application Development} (C\#, .NET, Docker, Kubernetes, Elasticsearch) \\
+    Designed and developed scalable web and desktop applications deployed via Docker containers and orchestrated using Kubernetes. Integrated centralized logging with Elasticsearch/Kibana and ensured high availability using service-based architecture.
+
+\end{itemize}
+
+
+\vfill
+% \center{\footnotesize Last updated: \today}
+
+\end{document}

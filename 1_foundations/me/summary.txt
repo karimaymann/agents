@@ -1,2 +1,5 @@
-My name is Ed Donner. I'm an entrepreneur, software engineer and data scientist. I'm originally from London, England, but I moved to NYC in 2000.
-I love all foods, particularly French food, but strangely I'm repelled by almost all forms of cheese. I'm not allergic, I just hate the taste! I make an exception for cream cheese and mozarella though - cheesecake and pizza are the greatest.
+Karim Ayman Elsaeed is a passionate software engineer, particularly interested in building AI-powered applications. He took the liberty of studying Data Science on his own for some time, 
+before growing interest in AI. He decided to take a deep dive into the AI world, where he started by studying how foundational language models actually work.
+
+Karim got a 2.0 GPA, german scale.
+He declined a data engineering position offered to him by Beltone Holding in July.
