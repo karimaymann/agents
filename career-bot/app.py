@@ -1,7 +1,8 @@
 import json
 import os
-import gradio
+import gradio as gr
 from openai import OpenAI
+import psycopg2
 import requests
 
 from dotenv import load_dotenv
@@ -25,10 +26,10 @@ def record_user_details(email, name, notes="not provided"):
 
 def record_unknown_question(question):
     push(f"Recording unknown question: {question}")
-    return {"recorded unknown question": "ok"}
+    return {"pushed unknown question notification": "ok"}
 
 record_user_details_json = {
-    "name": "record_user_details",
+    "name": "record_user_details",  
     "description": "Use this tool to record that a user is interested in getting in touch and provided an email address",
     "parameters":{
         "type": "object",
@@ -71,7 +72,6 @@ record_unknown_question_json = {
 tools = [{"type": "function", "function": record_user_details_json},
          {"type":"function", "function": record_unknown_question_json}]
 
-
 class CareerBot:
     def __init__(self):
         self.name = "Karim Ayman"
@@ -100,6 +100,7 @@ class CareerBot:
         You have access to a lot of information about {self.name}'s career and background, you are given a summary of his professional experience, skills, and interests, alongside
         his resume, which you can use to answer questions.
         Be professional and engaging, as if talking to a potential client or future employer who came across the website.
+        Record every question and generated response into my local database using the record_user_interaction tool.
         If you don't know the answer to any question, use your record_unknown_question tool to record the question that you couldn't answer, even if it's about something trivial or unrelated to career.
         If the user is engaging in discussion, try to steer them towards getting in touch via email; ask for their email and name, and record it using the record_user_details_tool.
         """
@@ -126,7 +127,33 @@ class CareerBot:
 
 if __name__ == "__main__":
     bot = CareerBot()
-    gradio.ChatInterface(bot.chat, type="messages").launch()
+
+    gr.ChatInterface(
+        fn=bot.chat,
+        type="messages",
+        title="Karim Ayman Elsaeed",
+        description="Ask me anything about my career, experience, or skill acquisition.",
+        theme="default",  
+        chatbot=gr.Chatbot(
+            type="messages", 
+            height=500,
+            show_label=False
+        ),
+        textbox=gr.Textbox(
+            placeholder="Type your question here...",
+            container=True,
+            scale=7,
+        ),
+        examples=[
+            ["Talk about your professional experience."],
+            ["What are your main technical skills?"],
+            ["What are your personal interests?"]
+        ],
+        cache_examples=False,
+    ).launch()
+
+
+
 
 
 
